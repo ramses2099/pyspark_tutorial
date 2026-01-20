@@ -1,9 +1,10 @@
+import os
 import datetime
 import unittest
 from pyspark.sql import SparkSession
 from pyspark.testing import assertDataFrameEqual
 
-from application import highest_values_per_year
+from src.application import highest_values_per_year
 
 class ApplicationTest(unittest.TestCase):
     
@@ -24,4 +25,6 @@ class ApplicationTest(unittest.TestCase):
         ])
         actual = highest_values_per_year(df)
         assertDataFrameEqual(actual, expected)
-    
+
+if __name__== "__main__":
+    unittest.main()
